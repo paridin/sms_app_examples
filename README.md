@@ -9,8 +9,6 @@ This repository contains examples of how to integrate and use our SMS sending se
 3. [Repository Structure](#repository-structure)
 4. [Node.js Example](#nodejs-example)
 5. [API Endpoints](#api-endpoints)
-6. [Contributing](#contributing)
-7. [Support](#support)
 
 ## Introduction
 
