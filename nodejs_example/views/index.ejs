@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Sender</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>SMS Sender</h1>
+    
+    <% if (locals.message) { %>
+        <div class="message"><%= message %></div>
+    <% } %>
+
+    <form action="/send-sms" method="POST" autocomplete="off">
+        <label for="msisdn">MSISDN (without +52):</label>
+        <input type="text" id="msisdn" name="msisdn" required>
+        
+        <label for="body">Message Body:</label>
+        <textarea id="body" name="body" required maxlength="150" rows="8"></textarea>
+        
+        <button type="submit">Send SMS</button>
+    </form>
+
+    <div class="tutorial">
+        <h2>How to Use This SMS Sender</h2>
+        <ol>
+            <li>Enter the MSISDN (phone number) without the +52 prefix.</li>
+            <li>Type your message in the Message Body field.</li>
+            <li>Click the "Send SMS" button.</li>
+            <li>The application will:
+                <ul>
+                    <li>Obtain an access token from the Identity Provider.</li>
+                    <li>Retrieve the app ID from the Hub API.</li>
+                    <li>Send the SMS using the provided information.</li>
+                </ul>
+            </li>
+            <li>You'll see a success or error message after the process completes.</li>
+        </ol>
+        <p>Note: Make sure you've set up the .env file with your CLIENT_ID, CLIENT_SECRET, HUB_ENDPOINT before using this application.</p>
+    </div>
+</body>
+</html>
